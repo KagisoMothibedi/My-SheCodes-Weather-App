@@ -1,10 +1,72 @@
+html {
+  background-color: #f9f7fe;
+  font-family: "Roboto", sans-serif;
+}
+
+.appContainer {
+  width: 60%;
+  height: 80%;
+  background-color: blanchedalmond;
+  margin: 50px auto;
+  border-radius: 5px;
+  justify-content: center;
+  padding: 10px;
+  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+  /* display: flex;
+  flex-direction: column; */
+}
+.header {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.logo {
+  border-radius: 5px;
+}
+form {
+  display: inline;
+  margin-left: 20px;
+}
+#weather-text-input {
+  width: 80%;
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid;
+}
+.weather-text-btn {
+  border-radius: 5px;
+  height: 35px;
+}
+
 h1 {
   text-align: center;
 }
-p {
+.container {
+  display: flex;
+  justify-content: center;
   text-align: center;
+  line-height: 1.5;
+  margin-top: 10px;
 }
+.dayContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.dayContainer div {
+  border: 1px solid red;
+  border-radius: 5px;
+  padding: 5px 30px;
+  margin: 15px 0;
+}
+/* p {
+  text-align: center;
+} */
 
 footer {
   text-align: center;
+  margin-top: 10px;
 }
