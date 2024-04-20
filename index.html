@@ -19,8 +19,8 @@
         <header>
           <img
             src="https://asset.brandfetch.io/idhHl6SuQh/idW5RcNcBL.png"
-            style="height: 50px; width: 50px"
             class="logo"
+            alt="SheCodes logo"
           />
           <form>
             <input
@@ -44,18 +44,23 @@
       <main>
         <div class="container">
           <div>
-            <h1>My weather app - City</h1>
-            <div>🌧 12°C</div>
+            <h1 class="cityHeading">My weather app - City</h1>
+            <div class="temp">
+            <span class="temp-value">12</span>
+            <span class="temp-unit">°c </span>
+            <span class="temp-icon">🌧 </span>
+            
+            </div>
             <p class="date">
-              Tuesday 14:49, scattered clouds
+              <p><span class="date-time">Tuesday 14:49</span>, scattered clouds</p>
               <br />
-              Humidity: 66%, Wind: 3.13km/h
+              Humidity: <strong>66%</strong>, Wind: <strong> 3.13km/h</strong>
             </p>
           </div>
         </div>
       </main>
 
-      <hr />
+      <!-- <hr /> -->
       <div class="dayContainer">
         <div class="day1">
           <p>Mon</p>
@@ -88,7 +93,7 @@
         </div>
       </div>
 
-      <hr />
+      <!-- <hr /> -->
 
       <footer>
         Coded by
