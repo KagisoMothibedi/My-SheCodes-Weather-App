@@ -35,8 +35,10 @@ function displayTemperature(response) {
   let humidity = document.querySelector(".humidity");
   let timeElement = document.querySelector("#timeElement");
   //   let dateElement = document.querySelector("#dateElement");
-  let date = new Date(response.data.time);
+  let date = new Date(response.data.time * 1000);
+  let icon = document.querySelector(".temp-icon");
 
+  icon.innerHTML = `<img class="img" src="${response.data.condition.icon_url}" />`;
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = temperature;
   description.innerHTML = ` ${response.data.condition.description}`;
