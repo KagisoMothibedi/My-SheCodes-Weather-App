@@ -88,13 +88,13 @@ form {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  border-top: 1px solid #f9f7fe;
+  border-top: 1px solid #885df1;
   padding: 30px 0 30px 0;
   border-bottom: 1px solid #885df1;
 }
 
 .dayContainer div {
-  border: 1px solid red;
+  border: 1px solid #f9f7fe;
   border-radius: 5px;
   padding: 5px 30px;
   margin: 15px 0;
