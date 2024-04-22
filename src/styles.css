@@ -71,8 +71,6 @@ form {
   line-height: 1;
   margin-top: 40px;
   padding: 5px 5px 20px 5px;
-  border-top: 1px solid #885df1;
-  border-bottom: 1px solid #885df1;
   margin-bottom: 40px;
 }
 .temp {
@@ -121,6 +119,10 @@ form {
 /* p {
   text-align: center;
 } */
+
+.second-value {
+  color: rgba(0, 0, 0, 0.6);
+}
 
 footer {
   text-align: center;
