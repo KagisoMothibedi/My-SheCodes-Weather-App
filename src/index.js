@@ -92,3 +92,29 @@ function search(event) {
 
 let searchForm = document.querySelector("form");
 searchForm.addEventListener("submit", search);
+
+function dailyForecast() {
+  let forecast = document.querySelector(".dayContainer");
+
+  let days = ["Mon", "Tues", "Wed", "Thurs", "Fri"];
+  let forecastHTML = "";
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="days">
+         <div class="forecastDate"> ${day} </div>
+         <div class="forecastIcon"> 🌧 </div>
+         <div class="forecastTemperatures-max-min">
+          <span class="maxTemp">19° </span> <span class="minTemp"> 12°</span>
+          </div>
+        </div>`;
+  });
+
+  forecast.innerHTML = forecastHTML;
+}
+
+dailyForecast();
+// dailyForecast.forEach(function (temp) {
+//   alert(temp);
+// });

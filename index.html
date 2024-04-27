@@ -13,106 +13,109 @@
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <title>Weather App</title>
   </head>
-  <body>
-    <div class="appContainer">
-      <div class="header">
-        <header>
-          <img
-            src="https://asset.brandfetch.io/idhHl6SuQh/idW5RcNcBL.png"
-            class="logo"
-            alt="SheCodes logo"
-          />
-          <form>
-            <input
-              type="search"
-              placeholder="Enter a city..."
-              name="weather-text-input"
-              id="weather-text-input"
-              class="weather-text-input"
-              required
+  <div class="mainContainer">
+    <body>
+      <div class="appContainer">
+        <div >
+          <header class="header">
+            <img
+              src="https://asset.brandfetch.io/idhHl6SuQh/idW5RcNcBL.png"
+              class="logo"
+              alt="SheCodes logo"
             />
-            <input
-              type="submit"
-              value="Search"
-              id="weather-text-btn"
-              class="weather-text-btn"
-            />
-          </form>
-        </header>
-      </div>
+            <form>
+              <input
+                type="search"
+                placeholder="Enter a city..."
+                name="weather-text-input"
+                id="weather-text-input"
+                class="weather-text-input"
+                required
+              />
+              <input
+                type="submit"
+                value="Search"
+                id="weather-text-btn"
+                class="weather-text-btn"
+              />
+            </form>
+          </header>
+        </div>
 
-      <main>
-        <h2>My Weather App</h2>
-        <div class="container">
-          <div>
-            <h1 class="cityHeading"></h1>
-            <div class="temp">
-              <span class="temp-value"></span>
-              <span class="temp-unit">°c </span>
-              <span class="temp-icon"> </span>
+        <main>
+          <h2>My Weather App</h2>
+          <div class="container">
+            <div>
+              <h1 class="cityHeading"></h1>
+              <div class="temp">
+                <span class="temp-value"></span>
+                <span class="temp-unit">°c </span>
+                <span class="temp-icon"> </span>
+              </div>
+              <p class="date">
+                <span id="timeElement"> 14:49</span>,<span class="description">
+                </span>
+              </p>
+              <br />
+              Humidity: <strong class="humidity">%</strong>, Wind:
+              <strong class="wind"> km/h</strong>
             </div>
-            <p class="date">
-              <span id="timeElement"> 14:49</span>,<span class="description">
-              </span>
-            </p>
-            <br />
-            Humidity: <strong class="humidity">%</strong>, Wind:
-            <strong class="wind"> km/h</strong>
           </div>
-        </div>
-      </main>
+        </main>
 
-      <div class="dayContainer">
-        <div class="day1">
-          <p>Mon</p>
-          🌧
-          <p>12° <span class="second-value"> 19°</span></p>
+        <div class="dayContainer">
+          <!-- <div class="day1">
+                <p>Mon</p>
+                🌧
+                <p>12° <span class="second-value"> 19°</span></p>
+              </div> -->
+
+          <!-- <div class="day2">
+                <p>Tue</p>
+                ☀
+                <p>13° <span class="second-value"> 20°</span></p>
+              </div>
+
+              <div class="day3">
+                <p>Wed</p>
+                ⛈
+                <p>14° <span class="second-value"> 21°</span></p>
+              </div>
+
+              <div class="day4">
+                <p>Thur</p>
+                🌦
+                <p>15° <span class="second-value"> 22°</span></p>
+              </div>
+
+              <div class="day5">
+                <p>Fri</p>
+                🌤
+                <p>16° <span class="second-value"> 23°</span></p>
+              </div> -->
         </div>
 
-        <div class="day2">
-          <p>Tue</p>
-          ☀
-          <p>13° <span class="second-value"> 20°</span></p>
-        </div>
-
-        <div class="day3">
-          <p>Wed</p>
-          ⛈
-          <p>14° <span class="second-value"> 21°</span></p>
-        </div>
-
-        <div class="day4">
-          <p>Thur</p>
-          🌦
-          <p>15° <span class="second-value"> 22°</span></p>
-        </div>
-
-        <div class="day5">
-          <p>Fri</p>
-          🌤
-          <p>16° <span class="second-value"> 23°</span></p>
-        </div>
+        <footer>
+          Coded by
+          <a href="https://github.com/KagisoMothibedi" target="_blank"
+            >Kagiso Mothibedi</a
+          >, code hosted on
+          <a
+            href="https://github.com/KagisoMothibedi/My-SheCodes-Weather-App"
+            target="_blank"
+            >GitHub
+          </a>
+          and website hosted on
+          <a
+            href="https://shecodes-weather-app-kagiso.netlify.app/"
+            target="_blank"
+          >
+            Netlify
+          </a>
+        </footer>
       </div>
 
-      <footer>
-        Coded by
-        <a href="https://github.com/KagisoMothibedi" target="_blank"
-          >Kagiso Mothibedi</a
-        >, code hosted on
-        <a
-          href="https://github.com/KagisoMothibedi/My-SheCodes-Weather-App"
-          target="_blank"
-          >GitHub
-        </a>
-        and website hosted on
-        <a
-          href="https://shecodes-weather-app-kagiso.netlify.app/"
-          target="_blank"
-        >
-          Netlify
-        </a>
-      </footer>
-    </div>
-    <script src="src/index.js"></script>
-  </body>
+      <script src="src/index.js"></script>
+    </body>
+  </div>
 </html>
