@@ -120,12 +120,10 @@ form {
   /* color: #662eed; */
   color: #c0d6e8;
 }
-/* .temp-icon {
-  background-color: yellow;
-} */
+
 .img {
-  width: 50px;
-  height: 55px;
+  width: 45px;
+  height: 50px;
 }
 
 .dayContainer {
@@ -135,13 +133,14 @@ form {
   border-top: 1px solid #c0d6e8;
   padding: 30px 0 30px 0;
   border-bottom: 1px solid #c0d6e8;
+  flex-wrap: wrap;
 }
 
 .dayContainer .days {
   border: 1px solid #f9f7fe;
   border-radius: 5px;
-  padding: 30px 30px;
-  margin: 15px 0;
+  padding: 25px 25px;
+  margin: 15px 4px;
   text-align: center;
 }
 /* p {

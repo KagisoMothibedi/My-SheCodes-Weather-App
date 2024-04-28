@@ -61,6 +61,13 @@ function search(event) {
 let searchForm = document.querySelector("form");
 searchForm.addEventListener("submit", search);
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return `${days[date.getDay()]}`;
+}
+
 function getForecast(city) {
   let apiKey = "0a938o4bbb37e6d9d556431etfe1aab0";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
@@ -69,37 +76,27 @@ function getForecast(city) {
 }
 
 function dailyForecast(response) {
-  console.log(response.data);
-  let forecast = document.querySelector(".dayContainer");
-  // let forecastDate = document.querySelector(".forecastDate");
-  // let htmlMinTemp = document.querySelector(".minTemp");
-  // let htmlMaxTemp = document.querySelector(".maxTemp");
-  // let tempMin = Math.round(response.data.daily.temperature.minimum);
-  // let tempMax = Math.round(response.data.daily.temperature.maximum);
-  // let dailyIcon = document.querySelector(".forecastIcon");
-
-  // let date = new Date(response.data.time * 1000);
-
-  // forecastDate.innerHTML = formatDate1(date);
-
-  // htmlMinTemp.innerHTML = tempMin;
-  // htmlMaxTemp.innerHTML = tempMax;
-  // dailyIcon.innerHTML = `<img class="img" src="${response.data.condition.icon_url}" />`;
-
-  let days = ["Mon", "Tues", "Wed", "Thurs", "Fri"];
   let forecastHTML = "";
 
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="days">
-         <div class="forecastDate"> ${day} </div>
-         <div class="forecastIcon"> 🌧 </div>
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
+        <div class="days">
+         <div class="forecastDate"> ${formatDay(day.time)} </div>
+         <div class="forecastIcon"> <img class="img" src="${
+           day.condition.icon_url
+         }"/> </div>
          <div class="forecastTemperatures-max-min">
-          <span class="maxTemp">19° </span> <span class="minTemp"> 12°</span>
+          <span class="maxTemp">${Math.round(day.temperature.maximum)}°</span> 
+          <span class="minTemp"> ${Math.round(day.temperature.minimum)}°</span>
           </div>
-        </div>`;
+        </div>
+        `;
+    }
   });
 
+  let forecast = document.querySelector(".dayContainer");
   forecast.innerHTML = forecastHTML;
 }
