@@ -1,31 +1,3 @@
-// function displaytemperature(response) {
-//   let temperatureElement = document.querySelector(".temp-value");
-//   let temperature = Math.round(response.data.temperature.current);
-//   let cityElement = document.querySelector(".cityHeading");
-//   cityElement.innerHTML = response.data.city;
-//   temperatureElement.innerHTML = temperature;
-
-//   let icon = document.querySelector(".temp-icon");
-//   let tempIcon = response.data.condition.icon_url;
-//   icon.innerHTML = tempIcon;
-// }
-
-// function displayWeather(event) {
-//   event.preventDefault();
-//   let input = document.querySelector(".weather-text-input");
-//   let changeHeading = document.querySelector(".cityHeading"); Remove this line
-// let cityElement = input.value;
-//   changeHeading.innerHTML = input.value;
-
-//   let keyApi = "0a938o4bbb37e6d9d556431etfe1aab0";
-//   let urlApi = `https://api.shecodes.io/weather/v1/current?query=${changeHeading}&key=${keyApi}`;
-//   axios.get(urlApi).then(displaytemperature);
-// }
-// let form = document.querySelector("form");
-// form.addEventListener("submit", displayWeather);
-
-// https://api.shecodes.io/weather/v1/current?query=Miami&key=0a938o4bbb37e6d9d556431etfe1aab0
-
 function displayTemperature(response) {
   let temperatureElement = document.querySelector(".temp-value");
   let temperature = Math.round(response.data.temperature.current);
@@ -34,7 +6,6 @@ function displayTemperature(response) {
   let wind = document.querySelector(".wind");
   let humidity = document.querySelector(".humidity");
   let timeElement = document.querySelector("#timeElement");
-  //   let dateElement = document.querySelector("#dateElement");
   let date = new Date(response.data.time * 1000);
   let icon = document.querySelector(".temp-icon");
 
@@ -44,12 +15,9 @@ function displayTemperature(response) {
   description.innerHTML = ` ${response.data.condition.description}`;
   wind.innerHTML = `${response.data.wind.speed}km/h`;
   humidity.innerHTML = `${response.data.temperature.humidity}%`;
-  //   dateTime.innerHTML = response.data.time;
   timeElement.innerHTML = formatDate(date);
 
-  //   let icon = document.querySelector(".temp-icon");
-  //   let tempIcon = response.data.condition.icon_url;
-  //   icon.innerHTML = tempIcon.src;
+  getForecast(response.data.city); //Why do we call it here?
 }
 
 function formatDate(date) {
@@ -93,8 +61,30 @@ function search(event) {
 let searchForm = document.querySelector("form");
 searchForm.addEventListener("submit", search);
 
-function dailyForecast() {
+function getForecast(city) {
+  let apiKey = "0a938o4bbb37e6d9d556431etfe1aab0";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(dailyForecast);
+  console.log(apiUrl);
+}
+
+function dailyForecast(response) {
+  console.log(response.data);
   let forecast = document.querySelector(".dayContainer");
+  // let forecastDate = document.querySelector(".forecastDate");
+  // let htmlMinTemp = document.querySelector(".minTemp");
+  // let htmlMaxTemp = document.querySelector(".maxTemp");
+  // let tempMin = Math.round(response.data.daily.temperature.minimum);
+  // let tempMax = Math.round(response.data.daily.temperature.maximum);
+  // let dailyIcon = document.querySelector(".forecastIcon");
+
+  // let date = new Date(response.data.time * 1000);
+
+  // forecastDate.innerHTML = formatDate1(date);
+
+  // htmlMinTemp.innerHTML = tempMin;
+  // htmlMaxTemp.innerHTML = tempMax;
+  // dailyIcon.innerHTML = `<img class="img" src="${response.data.condition.icon_url}" />`;
 
   let days = ["Mon", "Tues", "Wed", "Thurs", "Fri"];
   let forecastHTML = "";
@@ -113,8 +103,3 @@ function dailyForecast() {
 
   forecast.innerHTML = forecastHTML;
 }
-
-dailyForecast();
-// dailyForecast.forEach(function (temp) {
-//   alert(temp);
-// });
